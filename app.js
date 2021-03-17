@@ -34,7 +34,7 @@ function animateSlides() {
         const pageTl = gsap.timeline();
         let nextSlide = slides.length - 1 === index ? "end" : slides[index + 1];
         pageTl.fromTo(nextSlide, { y: "0%" }, { y: "50%" });
-        pageTl.fromTo(slide, { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.5 });
+        pageTl.fromTo(slide, { opacity: 1, scale: 1, filter: "blur(0px)" }, { opacity: 0, scale: 0.5, filter: "blur(4px)" });
         pageTl.fromTo(nextSlide, { y: "50%" }, { y: "0%" }, "-=0.5");
         //new scene
         pageScene = new ScrollMagic.Scene({

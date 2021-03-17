@@ -59,12 +59,14 @@ body{
 .slide{
     min-height: 100vh;
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
+    padding: 2rem 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
     background: white;
+    box-shadow: rgb(0 0 0 / 20%) 0px -3px 4px;
 }
 .slide.what, .slide.design{
     flex-direction: column;
