@@ -104,7 +104,7 @@ body{
 }
 
 .hero-img img{
-    width: 100%;
+    width: 50%;
     height: auto;
     object-fit: cover;    
 }
@@ -131,9 +131,13 @@ body{
 }
 
 .hero-desc p{
-    padding: 3rem 0rem;
-    font-size: 1.5rem;
+    padding: .7rem 0rem;
+    font-size: 1.3rem;
     color: var(--light-grey);
+}
+
+.duo-cta{
+    margin-top: 2rem;
 }
 
 .explore{
@@ -345,6 +349,10 @@ form label, form h3{
     color: var(--dark-grey);
 }
 
+form h3{
+    margin-bottom: .5rem;
+}
+
 .form-item{
     margin-bottom: 1rem;
 }
@@ -368,6 +376,10 @@ form label, form h3{
 }
 .shop-step3{
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
 }
 .shop-step1 p, .shop-step2 p{
     padding: 0.4rem 0;  
@@ -382,7 +394,6 @@ form label, form h3{
 }
 .confirm-screen{
     width: 35%;
-    margin: auto;
 }
 
 input[type="text"], input[type="number"]{
@@ -391,45 +402,40 @@ input[type="text"], input[type="number"]{
     color: var(--dark-grey);
     font-size: 1.8rem;
     width: 300px;
+    padding: 0 .5rem;
 }
 input[type="text"]:focus{
     outline: none;
 }
 
 footer{
-    background-color: var(--secondary-color);
+    background: url("./img/building.jpg") var(--secondary-color);
+    background-blend-mode: multiply;
     color: white;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     text-align: center;
-    padding: .5rem 0;
+    padding: 1rem 0;
     animation: colors 10s alternate infinite;
 }
 
 footer p {
     font-weight: bold;
+    font-size: 1rem;
 }
 
 footer ul{
     display: flex;
-    width: 50%;
     margin: auto;
     list-style: none;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.legal{
-    flex-direction: column;
-}
-
-.legal, .rsUl{
-    margin-top: 1rem;
-}
-
-.rsUl ul{
-    margin-top: .5rem;
+footer ul li{
+    margin: 0 .5rem;
+    font-size: 1rem;
 }
 
 .rs{
@@ -447,17 +453,26 @@ footer ul{
 
 
 .list-footer{
-    display: flex;
-    width: 80%;
+    width: 30%;
+    margin: 0 auto;
     justify-content: space-between;
     align-items: center;
 }
 
+.rsList{
+    justify-content: space-around;
+    margin: 1rem auto;
+    border-top: 2px solid white;
+    width: 200px;
+    padding-top: 1rem;
+}
+
+
 @keyframes colors{
     from{
-        background: var(--secondary-color);
+        background: url("./img/building.jpg") var(--secondary-color);
     }
     to{
-        background: var(--primary-color);
+        background: url("./img/building.jpg") var(--primary-color);
     }
 }
