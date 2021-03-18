@@ -477,7 +477,7 @@ footer ul li{
     }
 }
 
-@media screen and (max-width: 1500px){
+@media screen and (max-width: 1600px){
     html{
         font-size: 75%;
     }
