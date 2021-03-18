@@ -46,6 +46,8 @@ body{
     padding: 2rem 0;
     position: relative;
     z-index: 2;
+    position: sticky;
+    top: 0;
 }
 
 .line1, .line2{
@@ -138,7 +140,6 @@ body{
     padding: 1rem 3rem;
     background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
     border: none;
-    border: 4px solid;
     color: white;
     border-radius: 10px;
     font-size: 1rem;
@@ -273,7 +274,6 @@ body.hide{
     font-size: 2rem;
     text-align: left;
     display: none;
-    max-width: 70%;
     margin: auto;
 }
 .testimony.active{
@@ -313,6 +313,89 @@ body.hide{
     width: 10%;
     margin-bottom: 5rem;
 }
+
+.shop.slide .hero-desc{
+    width: 40vw;
+    height: 60vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.steps-container{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform .3s ease-in-out;
+}
+
+.shop.slide .hero-desc .steps-container > *{
+    width: 40vw;
+    height: 60vh;
+}
+
+form{
+    color: var(--light-grey);
+    height: 60%;
+}
+
+form label, form h3{
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--dark-grey);
+}
+
+.form-item{
+    margin-bottom: 1rem;
+}
+
+.radios, .name{
+    display: flex;
+}
+
+.radios > *{
+    margin-right: 1rem;
+}
+
+.radios label{
+    font-size: 1rem;
+    color: var(--light-grey);
+    font-weight: normal;
+}
+
+.shop-step1 .explore, .shop-step2 .explore{
+    margin-left: calc(40vw - 230px);
+}
+.shop-step3{
+    text-align: center;
+}
+.shop-step1 p, .shop-step2 p{
+    padding: 0.4rem 0;  
+    font-size: 1.2rem;  
+    margin-bottom: 1rem;
+}
+
+.back-shop{
+    width: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.confirm-screen{
+    width: 35%;
+    margin: auto;
+}
+
+input[type="text"], input[type="number"]{
+    border: none;
+    border-bottom: 1px solid var(--light-grey);
+    color: var(--dark-grey);
+    font-size: 1.8rem;
+    width: 300px;
+}
+input[type="text"]:focus{
+    outline: none;
+}
+
 footer{
     background-color: var(--secondary-color);
     color: white;

@@ -6,13 +6,21 @@ const logo = document.querySelector("#logo img");
 const navLinks = Array.from(document.querySelector(".nav-links").children);
 const people = document.querySelectorAll(".people");
 const testimonies = document.querySelectorAll(".testimony");
+const toStep1 = document.querySelectorAll(".toStep1");
+const toStep2 = document.querySelectorAll(".toStep2");
+const toStep0 = document.querySelectorAll(".toStep0");
+const tunnel = document.querySelector(".steps-container");
+const toConfirm = document.querySelector(".toStep3");
+const confirmScreen = document.querySelector(".confirm-screen");
+// const backShop = document.querySelectorAll(".back-shop");
+const nav = document.querySelector(".nav-header");
+gsap.fromTo(nav, 1, { y: "-100%" }, { y: "0%" });
 
 function animateSlides() {
     //init controller
     controller = new ScrollMagic.Controller();
     //select some things
     const sliders = document.querySelectorAll(".slide");
-    const nav = document.querySelector(".nav-header");
     //loop over each slide
     sliders.forEach((slide, index, slides) => {
         const revealImg = slide.querySelector(".reveal-img");
@@ -23,7 +31,6 @@ function animateSlides() {
         slideTl.fromTo(revealImg, { x: "0%" }, { x: "100%" });
         slideTl.fromTo(img, { scale: 2 }, { scale: 1 }, "-=1");
         slideTl.fromTo(revealText, { x: "0%" }, { x: "100%" }, "-=0.75");
-        slideTl.fromTo(nav, { y: "-100%" }, { y: "0%" }, "-=0.5");
         //create scene
         slideScene = new ScrollMagic.Scene({
             triggerElement: slide,
@@ -133,6 +140,37 @@ people.forEach(single => {
         testimonyToSelect.classList.add("active");
     });
 });
+
+toStep0.forEach(item => {
+    item.addEventListener("click", function () {
+        tunnel.style.transform = "translateX(0vw)";
+    });
+});
+toStep1.forEach(item => {
+    item.addEventListener("click", function () {
+        tunnel.style.transform = "translateX(-40vw)";
+    });
+});
+toStep2.forEach(item => {
+    item.addEventListener("click", function () {
+        tunnel.style.transform = "translateX(-80vw)";
+    });
+});
+
+toConfirm.addEventListener("click", function () {
+    tunnel.style.transform = "translateX(-120vw)";
+    animationSkipForward.playSegments([0, 70.12], true);
+});
+
+const animationSkipForward = bodymovin.loadAnimation({
+    container: confirmScreen,
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: "https://assets1.lottiefiles.com/private_files/lf30_PQxIrX.json"
+});
+animationSkipForward.setSpeed(0.7);
+
 
 animateSlides();
 animateCards();
