@@ -66,14 +66,14 @@ body{
     align-items: center;
     color: white;
     background: white;
-    box-shadow: rgb(0 0 0 / 20%) 0px -3px 4px;
+    box-shadow: rgb(0 0 0 / 4%) 0px -3px 4px;
 }
-.slide.what, .slide.design{
+.slide.what, .slide.design, .slide.testimonies{
     flex-direction: column;
     justify-content: center;
 }
 
-.slide.what > h2, .slide.design > h2{
+.slide.what > h2, .slide.design > h2, .slide.testimonies >h2{
     color: var(--dark-grey);
     margin-bottom: 5rem;
     font-size: 4rem;
@@ -175,8 +175,8 @@ body{
 }
 
 .nav-links{
-    font-size: 3rem;
-    flex-basis: 30rem;
+    font-size: 2rem;
+    flex-basis: 43rem;
 }
 
 .nav-links h3{
@@ -248,8 +248,8 @@ body.hide{
 }
 
 .card .picto{
-    width: 4rem;
-    margin-bottom: 4rem;
+    width: 10rem;
+    margin-bottom: 2rem;
 }
 
 .card h2{
@@ -266,6 +266,53 @@ body.hide{
     width: 100%;
 }
 
+.testimonies-container{
+    color:var(--light-grey);
+}
+.testimony{
+    font-size: 2rem;
+    text-align: left;
+    display: none;
+    max-width: 70%;
+    margin: auto;
+}
+.testimony.active{
+    display: block;
+}
+.testimony .signature{
+    color: var(--dark-grey);
+    font-weight: bold;
+    text-align: right;
+    margin-top: 2rem;
+}
+.people-container{
+    display: flex;
+    width: 60%;
+    margin: 4rem auto 0 auto;
+    justify-content: space-between;
+}
+.people{
+    cursor: pointer;
+    transform: scale(.95);
+    transition: transform .3s ease-in-out;
+}
+.people:hover{
+    transform: scale(1);    
+}
+.people img{
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
+    opacity: .6;
+    pointer-events: none;
+}
+.people.active img{
+    border: 3px solid var(--secondary-color);
+    opacity: 1;
+}
+#quote{
+    width: 10%;
+    margin-bottom: 5rem;
+}
 footer{
     background-color: var(--secondary-color);
     color: white;

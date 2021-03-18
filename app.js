@@ -4,6 +4,8 @@ let pageScene;
 const burger = document.querySelector(".burger");
 const logo = document.querySelector("#logo img");
 const navLinks = Array.from(document.querySelector(".nav-links").children);
+const people = document.querySelectorAll(".people");
+const testimonies = document.querySelectorAll(".testimony");
 
 function animateSlides() {
     //init controller
@@ -114,6 +116,21 @@ navLinks.forEach(navLink => {
             logo.setAttribute("src", "./img/logo.svg");
             document.body.classList.remove("hide");
         }
+    });
+});
+
+people.forEach(single => {
+    single.addEventListener("click", function (e) {
+        testimonies.forEach(testimony => {
+            testimony.classList.remove("active");
+        });
+        people.forEach(single => {
+            single.classList.remove("active");
+        });
+        e.target.classList.add("active");
+        let selectedPeople = e.target.id;
+        let testimonyToSelect = document.querySelector(`.testimony[data-testi="${selectedPeople}"]`);
+        testimonyToSelect.classList.add("active");
     });
 });
 
