@@ -405,6 +405,7 @@ footer{
     right: 0;
     text-align: center;
     padding: .5rem 0;
+    animation: colors 10s alternate infinite;
 }
 
 footer p {
@@ -450,4 +451,13 @@ footer ul{
     width: 80%;
     justify-content: space-between;
     align-items: center;
+}
+
+@keyframes colors{
+    from{
+        background: var(--secondary-color);
+    }
+    to{
+        background: var(--primary-color);
+    }
 }
