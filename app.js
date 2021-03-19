@@ -62,12 +62,21 @@ function animateCards() {
     const sliders = document.querySelectorAll(".slide");
     const cardTl = gsap.timeline({ default: { duration: 1.5, ease: "power2.inOut" } });
     cardTl.staggerFromTo(".card", 1, { y: 500, opacity: 0 }, { y: 0, opacity: 1 }, 0.1);
-    cardScene = new ScrollMagic.Scene({
-        triggerElement: sliders[1],
-        triggerHook: 0.25
-    })
-        .setTween(cardTl)
-        .addTo(controller);
+    if (window.matchMedia("(min-width: 500px)").matches) {
+        cardScene = new ScrollMagic.Scene({
+            triggerElement: sliders[1],
+            triggerHook: 0.25
+        })
+            .setTween(cardTl)
+            .addTo(controller);
+    } else {
+        cardScene = new ScrollMagic.Scene({
+            triggerElement: sliders[1],
+            triggerHook: 0.5
+        })
+            .setTween(cardTl)
+            .addTo(controller);
+    }
 }
 
 function animateDesignItems() {
@@ -143,22 +152,38 @@ people.forEach(single => {
 
 toStep0.forEach(item => {
     item.addEventListener("click", function () {
-        tunnel.style.transform = "translateX(0vw)";
+        if (window.matchMedia("(min-width: 500px)").matches) {
+            tunnel.style.transform = "translateX(0vw)";
+        } else {
+            tunnel.style.transform = "translateX(0vw)";
+        }        
     });
 });
 toStep1.forEach(item => {
     item.addEventListener("click", function () {
-        tunnel.style.transform = "translateX(-40vw)";
+        if (window.matchMedia("(min-width: 500px)").matches) {
+            tunnel.style.transform = "translateX(-40vw)";
+        } else {
+            tunnel.style.transform = "translateX(-90vw)";
+        }
     });
 });
 toStep2.forEach(item => {
     item.addEventListener("click", function () {
-        tunnel.style.transform = "translateX(-80vw)";
+        if (window.matchMedia("(min-width: 500px)").matches) {
+            tunnel.style.transform = "translateX(-80vw)";
+        } else {
+            tunnel.style.transform = "translateX(-180vw)";
+        }
     });
 });
 
 toConfirm.addEventListener("click", function () {
-    tunnel.style.transform = "translateX(-120vw)";
+    if (window.matchMedia("(min-width: 500px)").matches) {
+        tunnel.style.transform = "translateX(-120vw)";
+    } else {
+        tunnel.style.transform = "translateX(-270vw)";
+    }
     animationSkipForward.playSegments([0, 70.12], true);
 });
 
@@ -171,7 +196,9 @@ const animationSkipForward = bodymovin.loadAnimation({
 });
 animationSkipForward.setSpeed(0.7);
 
-
-animateSlides();
+if (window.matchMedia("(min-width: 500px)").matches) {
+    animateSlides();
+}
+// animateSlides();
 animateCards();
 animateDesignItems();

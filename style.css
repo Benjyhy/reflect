@@ -247,7 +247,7 @@ body.hide{
     justify-content: center;
     text-align: center;
     color: var(--light-grey);
-    box-shadow: 5px 3px 15px -2px rgba(0, 0, 0, .23);
+    box-shadow: 5px 3px 15px -2px rgb(0 0 0 / 23%);
     border-radius: 10px;
     padding: 4rem;
 }
@@ -467,6 +467,10 @@ footer ul li{
     padding-top: 1rem;
 }
 
+.maintenant{
+    font-size: 4rem;
+}
+
 
 @keyframes colors{
     from{
@@ -480,5 +484,97 @@ footer ul li{
 @media screen and (max-width: 1600px){
     html{
         font-size: 75%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    html{
+        font-size: 85%;
+    }
+    .hero-desc{
+        padding-left: 0;
+    }
+    .slide{
+        flex-direction: column;
+    }
+    .cards-container{
+        flex-direction: column;
+    }
+    .reveal-img, .reveal-text{
+        display: none;
+    }
+    .home.slide .hero-img img, .hero-img img{
+        width: 100%;
+    }
+    .nav-links{
+        text-align: center;
+        font-size: 1.4rem;
+    }
+    #logo img{
+        width: 40px;
+    }
+    .hero-desc h2{
+        font-size: 2rem;
+    }
+    .slide.home .hero-desc h2 br{
+        display: none;
+    }
+    .slide.what > h2, .slide.design > h2, .slide.testimonies >h2{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .title{
+        margin: 2rem auto;
+    }
+    .slide{
+        min-height: auto;
+        box-shadow: none;
+    }
+    .cards-container{
+        gap: 3rem;
+    }
+    .designs-container{
+        grid-template-columns: repeat( auto-fit, minmax(50%, 1fr) );    
+    }
+    .nav-header{
+        padding-top: 2rem;
+        padding-bottom: 0;
+        min-height: auto;
+    }
+    .testimony{
+        font-size: 1.5rem;
+    }
+    .people-container{
+        width: 100%;
+    }
+    .people{
+        transform: scale(.85);
+    }
+    .shop.slide .hero-desc .steps-container > *{
+        width: 90vw;
+        height: 710px;
+    }
+    .shop.slide .hero-desc{
+        width: 90vw;
+        height: 710px;
+    }
+    footer{
+        display: none;
+    }
+    .shop-step1 .explore, .shop-step2 .explore{
+        margin-left: calc(90vw - 230px);
+    }
+    .shop.slide .hero-desc{
+        flex: auto;
+        flex-basis: auto;
+    }
+    form .name{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .maintenant{
+        font-size: 3rem;
     }
 }
